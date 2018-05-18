@@ -1,14 +1,11 @@
 {
-  "name": "prerender-access-log",
+  "name": "prerender-bot-monitor",
   "version": "0.1.0",
-  "description": "Prerender plugin for creating access log file with morgan ",
+  "description": "Simple prerender plugin for writing access log",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/unDemian/prerender-access-log.git"
+    "url": "https://github.com/pehu71/prerender-bot-monitor.git"
   },
   "keywords": [
     "prerender",
@@ -16,14 +13,14 @@
     "log",
     "morgan"
   ],
-  "author": "Andrei Demian",
+  "author": "Petr -pehu- Humplik",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/unDemian/prerender-access-log/issues"
+    "url": "https://github.com/pehu71/prerender-bot-monitor/issues"
   },
-  "homepage": "https://github.com/unDemian/prerender-access-log",
+  "homepage": "https://github.com/pehu71/prerender-bot-monitor",
   "dependencies": {
-    "morgan": "1.5.3",
-    "file-stream-rotator": "0.0.6"
+    "file-stream-rotator": "^0.2.1",
+    "morgan": "^1.9.0"
   }
 }
