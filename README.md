@@ -6,6 +6,7 @@ Simple prerender plugin for writing access logs based on [prerender-access-log](
 
 This prerender plugin works absolutely the same way, with these little improvements:
 * works with current version of [prerender](https://github.com/prerender/prerender) based on Headless Chrome
+* there is a bonus `pac.js` log parsing script helping you extract particular bots from a given log file
 * all original dependencies are `updated` and `npm audit`ed
 
 How to use
@@ -42,4 +43,30 @@ The plugin uses the [morgan](https://github.com/expressjs/morgan#predefined-form
   });
   ```
 
+# pac.js log parsing script
+This tool is located in `utils/pac.js` along with two test files.
+
+Simple script which can extract access log records for particular bot. For your convenience I recommend to copy
+this to the folder where your access logs dwell.
+
+### Usage
+
+`$ node pac <file-name> [switches]`
+
+`file-name` - the full path to the access log file (thus this is convenient to copy pac.js to the log file folder)
+
+Possible command line switches:
+
+`-g` filters for Googlebot Desktop  
+`-gm` filters for Googlebot Mobile  
+`-gi` filters for Googlebot Image  
+`-gv` filters for Googlebot Video  
+`-s` filters for SeznamBot  
+`-b` filters for bingbot  
+`-h` or `--help` prints this help  
+`--short` prints short version
+
+### License
+Copyright (c) 2015 Petr -pehu- Humplík.  
 Published under MIT license.
+
