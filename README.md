@@ -1,6 +1,6 @@
 prerender-bot-monitor
 =======================
-Simple prerender plugin for writing access logs based on [prerender-access-log](https://github.com/unDemian/prerender-access-log)
+Simple prerender plugin for writing access logs based on [prerender-access-log](https://github.com/unDemian/prerender-access-log) originally published by Andrei Demian.
 
 ## So what's the difference?
 
@@ -29,7 +29,7 @@ The plugin uses the [morgan](https://github.com/expressjs/morgan#predefined-form
     botMonitor: {
         // Check out the file-stream-rotator docs for parameters
         fileStreamRotator: {
-            filename: '/var/logs/prerender/access-%DATE%.log',
+            filename: '/var/log/prerender/access-%DATE%.log',
             frequency: 'daily',
             date_format: 'YYYY-MM-DD',
             verbose: false
