@@ -1,6 +1,6 @@
 let fs = require('fs');
 
-let parseLog = (pat, short, logFile) => {
+let parseLog = (pat, short, logFile, human) => {
 
     let file = fs.readFileSync(logFile, 'utf-8');
     let split = file.split(/\n/g);
@@ -20,7 +20,7 @@ let parseLog = (pat, short, logFile) => {
         }
     }
 
-    console.log(`Total Hits for ${pat}: ${cnt}\r
+    console.log(`Total Hits for ${human}: ${cnt}\r
 `);
 };
 
@@ -69,22 +69,22 @@ let main = () => {
                 printHelp();
                 break;
             case '-g':
-                parseLog(/Mozilla\/5\.0 \(compatible; Googlebot\/2\.1; \+http:\/\/www\.google\.com\/bot\.html\)/, short, logFile);
+                parseLog(/Mozilla\/5\.0 \(compatible; Googlebot\/2\.1; \+http:\/\/www\.google\.com\/bot\.html\)/, short, logFile, 'Googlebot Desktop');
                 break;
             case '-gm':
-                parseLog(/Mozilla\/5\.0 \(Linux; Android 6\.0\.1; Nexus 5X Build\/MMB29P\) AppleWebKit\/537\.36 \(KHTML, like Gecko\) Chrome\/41\.0\.2272\.96 Mobile Safari\/537\.36 \(compatible; Googlebot\/2\.1; \+http:\/\/www\.google\.com\/bot\.html\)/, short, logFile);
+                parseLog(/Mozilla\/5\.0 \(Linux; Android 6\.0\.1; Nexus 5X Build\/MMB29P\) AppleWebKit\/537\.36 \(KHTML, like Gecko\) Chrome\/41\.0\.2272\.96 Mobile Safari\/537\.36 \(compatible; Googlebot\/2\.1; \+http:\/\/www\.google\.com\/bot\.html\)/, short, logFile, 'Googlebot Mobile');
                 break;
             case '-gi':
-                parseLog(/Googlebot-Image\/1\.0/, short, logFile);
+                parseLog(/Googlebot-Image\/1\.0/, short, logFile, 'Googlebot Image');
                 break;
             case '-gv':
-                parseLog(/Googlebot-Video\/1\.0/, short, logFile);
+                parseLog(/Googlebot-Video\/1\.0/, short, logFile, 'Googlebot Video');
                 break;
             case '-s':
-                parseLog(/SeznamBot\/3\.2;/, short, logFile);
+                parseLog(/SeznamBot\/3\.2;/, short, logFile, 'SeznamBot');
                 break;
             case '-b':
-                parseLog(/bingbot/, short, logFile);
+                parseLog(/bingbot/, short, logFile, 'bingbot');
                 break;
         }
     }
