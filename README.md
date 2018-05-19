@@ -9,19 +9,19 @@ This prerender plugin works absolutely the same way, with these little improveme
 * there is a bonus `pac.js` log parsing script helping you extract particular bots from a given log file
 * all original dependencies are `updated` and `npm audit`ed
 
-How to use
-----------
+### How to use
 
 In your local prerender project run:
 
-`npm install prerender-bot-monitor --save`
+`npm install prerender-bot-monitor --save`  
+or alternatively you can `clone` this repo and run `npm install`
 
-Then in the server.js that initializes the prerender:
 
+### Configuration
+
+Then in the server.js that initializes the prerender:  
 `server.use(require('prerender-bot-monitor'));`
 
-Configuration
--------------
 The plugin uses the [morgan](https://github.com/expressjs/morgan#predefined-formats) for creating logs and [file-stream-rotator](https://www.npmjs.com/package/file-stream-rotator) for managing file names.
 
 ```javascript
