@@ -14,7 +14,16 @@ var server = prerender({
 		// Check out the morgan docs for the available formats
 		morgan: {
 			format: 'combined'
-		}
+		},
+		
+		// directory where the rendered pages will be stored
+		flushDir: '/home/pehu/Cache/',
+		
+		// flushes all output if empty ('') or if pattern matches
+		flushPattern: '',
+		
+		// flushing on/off switch
+		flush: true		
     }
 });
 
