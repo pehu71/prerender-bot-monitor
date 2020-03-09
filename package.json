@@ -21,6 +21,7 @@
   "homepage": "https://github.com/pehu71/prerender-bot-monitor",
   "dependencies": {
     "file-stream-rotator": "^0.2.1",
+    "moment": "^2.24.0",
     "morgan": "^1.9.0"
   }
 }
